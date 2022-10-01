@@ -29,7 +29,7 @@ public class CustomerController {
     public Customer getCustomer(@PathVariable Integer id){
         return customerService.getCustomer(id);
     }
-    @GetMapping
+    @GetMapping("/all")
     public List<Customer> getAll(){
         return customerService.getAll();
     }
