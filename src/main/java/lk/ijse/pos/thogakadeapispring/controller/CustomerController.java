@@ -1,0 +1,36 @@
+package lk.ijse.pos.thogakadeapispring.controller;
+
+import lk.ijse.pos.thogakadeapispring.entity.Customer;
+import lk.ijse.pos.thogakadeapispring.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("api/v1/customer")
+public class CustomerController {
+    @Autowired
+    private CustomerService customerService;
+
+    @PostMapping
+    public Customer createCustomer(@RequestBody Customer customer){
+        return customerService.createCustomer(customer);
+    }
+    @PutMapping
+    public  Customer updateCustomer(@RequestBody Customer customer){
+        return customerService.updateCustomer(customer);
+    }
+    @DeleteMapping// customer/1
+    public boolean deleteCustomer(@PathVariable Integer id){
+        return customerService.deleteCustomer(id);
+    }
+    @GetMapping
+    public Customer getCustomer(@PathVariable Integer id){
+        return customerService.getCustomer(id);
+    }
+    @GetMapping
+    public List<Customer> getAll(){
+        return customerService.getAll();
+    }
+}
