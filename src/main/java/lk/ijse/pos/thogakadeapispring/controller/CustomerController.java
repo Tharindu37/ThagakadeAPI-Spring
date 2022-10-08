@@ -25,7 +25,7 @@ public class CustomerController {
     public boolean deleteCustomer(@PathVariable Integer id){
         return customerService.deleteCustomer(id);
     }
-    @GetMapping
+    @GetMapping("{id}")
     public Customer getCustomer(@PathVariable Integer id){
         return customerService.getCustomer(id);
     }
