@@ -21,7 +21,7 @@ public class CustomerController {
     public  Customer updateCustomer(@RequestBody Customer customer){
         return customerService.updateCustomer(customer);
     }
-    @DeleteMapping// customer/1
+    @DeleteMapping("{id}")// customer/1
     public boolean deleteCustomer(@PathVariable Integer id){
         return customerService.deleteCustomer(id);
     }
